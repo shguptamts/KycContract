@@ -1,0 +1,58 @@
+Setting up private network
+
+	Step 1:
+		cd Phase-3/KYC-Blockchain/
+
+		
+	Step 2:
+		After open terminal and just make sure that you are inside the project directory which you had
+		created in the previous step. Next, you need to issue the following command and press
+		enter:
+		geth --datadir ./datadir init ./Init.json
+		
+		
+	step 3:
+		start this particular network.
+		In terminal enter: 
+		geth --datadir ./datadir --networkid 2019 --rpc --rpcport 30304 --allow-insecure-unlock console
+		
+	step 4:
+		The next step is to now create an account which can be created using personal API.
+		You need to type in the following command inside the console:
+		personal.newAccount("aakash")
+		
+	step 5:
+		You need to unlock the first account so that it is accessible to the truffle console environment when you want to send your smart contracts on the blockchain.
+		The following command is used to unlock an account:
+		personal.unlockAccount(eth.coinbase, "aakash",0)
+		
+	step 6:
+		Start minning by running below command
+		miner.start()
+		
+
+Smart Contract Deployment on a Private Blockchain
+
+	step 1:
+		cd Phase-3/KYC-SC
+		
+	step 2:
+		compile the contract
+		Open terminal at Phase-3/KYC-SC
+		run :
+			truffle compile
+	
+	step 3:
+		The deployment of KYC Smart contract happens through the migrate command
+		run :
+			truffle migrate
+			
+	step 4:
+			To use contract functions using truffle run.
+			truffle console
+			truffle(development)> let kyc = await KYC.deployed()
+
+
+	
+	
+	
